@@ -18,7 +18,7 @@ let options = {
 };
 
 const swiperClient = new Swiper('.slider__client', options);
-// const swiperBlog = new Swiper('.slider__blog', options);
+const swiperBlog = new Swiper('.slider__blog', options);
 // const swiperEvent = new Swiper('.slider__event', options);
 
 
