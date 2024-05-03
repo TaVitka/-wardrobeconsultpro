@@ -1,0 +1,50 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.footer {
+  &__inner {
+    padding: 32px 0;
+    background-color: var(--color-grey-400);
+  }
+
+  &__wrapper {
+    @include flex-all-sb;
+  }
+
+  &__links,
+  &__btns,
+  &__items {
+    @include flex-v-center
+  }
+
+  &__link {
+    padding-block: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--color-white);
+
+    &:not(:last-of-type) {
+      margin-right: 30px;
+
+    }
+  }
+
+  .btn {
+    color: var(--color-white) !important;
+    border-color: var(--color-white);
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__bottom {
+    padding: 1px 0;
+  }
+
+  &__item {
+    &:not(:last-of-type) {
+      margin-right: clamp(30px, 19vw, 265px);
+    }
+  }
+}
