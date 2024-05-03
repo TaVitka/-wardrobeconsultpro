@@ -11,19 +11,14 @@
     width: 100%;
     padding-inline: clamp(20px, 3.5vw, 48px);
 
-    //& > *:not(:last-child) {
-    //  margin-bottom: clamp(20px, 3vw, 32px);
-    //}
-  }
-
-  &__title,
-  &__texts {
-    margin-bottom: clamp(20px, 3vw, 32px);
+    & > *:not(:last-child) {
+      margin-bottom: clamp(20px, 4.5vw, 64px);
+    }
   }
 
   &__text {
     &:not(:last-of-type) {
-      margin-bottom: clamp(20px, 4vw, 50px);
+      margin-bottom: clamp(20px, 4.5vw, 64px);
     }
 
     p {
@@ -39,6 +34,52 @@
   &--home {
     .box__content {
       padding-bottom: 10px;
+
+      & > *:not(:last-child) {
+        margin-bottom: clamp(20px, 3vw, 32px);
+      }
     }
+
+    .box__text:not(:last-of-type) {
+      margin-bottom: clamp(20px, 4vw, 50px);
+    }
+  }
+
+  &--reverse {
+    .box__inner {
+      flex-direction: row-reverse;
+    }
+
+    .box__content {
+      padding-inline: 0;
+    }
+  }
+
+  &--background {
+    .box__texts {
+      width: 95%;
+    }
+  }
+
+  &--journey {
+    .box__content {
+      padding-inline: clamp(20px, 3.5vw, 48px) 0;
+    }
+  }
+
+  &--ethic {
+    .box__content {
+      padding-right: clamp(0px, 3vw, 34px);
+    }
+  }
+}
+
+.page--about .box--home {
+  .link {
+    display: none;
+  }
+
+  .box__content {
+    padding-bottom: 50px;
   }
 }
