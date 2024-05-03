@@ -45,8 +45,8 @@
   .swiper-button {
     @include cover-background;
 
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     background-image: url("../images/icons/next-icon.svg");
     border-radius: var(--radius-round);
     top: unset;
@@ -73,6 +73,36 @@
 
   .swiper-button-next {
     right: 76px;
+  }
+
+  .swiper__nav {
+    @include  flex-all-sb;
+
+    position: absolute;
+    bottom: 0;
+    right: 336px;
+    max-width: 220px;
+    width: 100%;
+
+    .swiper-button {
+      position: relative;
+      top: unset;
+      bottom: unset;
+      left: unset;
+      right: unset;
+      margin: 0;
+      min-width: 50px;
+    }
+
+    .swiper-pagination {
+      position: static;
+      width: fit-content;
+      white-space: nowrap;
+
+      span {
+        font-weight: var(--fw-400);
+      }
+    }
   }
 
   @include media(tablet-wide) {
