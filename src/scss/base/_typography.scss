@@ -23,7 +23,7 @@ h1,
 
 h2,
 .name {
-  font-size: clamp(26px, 3vw, 48px);
+  font-size: clamp(26px, 4vw, 48px);
 }
 
 h3 {
@@ -38,13 +38,18 @@ h3 {
   line-height: 1.21;
   font-weight: var(--fw-500);
   text-decoration: underline;
+  transition: color .4s ease-in-out;
+
+  &:hover {
+    color: var(--color-red-400);
+  }
 }
 
 .more {
   position: relative;
   display: block;
   width: fit-content;
-  padding-right: 48px;
+  padding-right: 42px;
   font-size: clamp(16px, 2vw, 20px);
   line-height: 1.2;
   font-weight: var(--fw-600);

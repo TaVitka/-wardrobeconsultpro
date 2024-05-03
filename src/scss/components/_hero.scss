@@ -16,4 +16,9 @@
     color: var(--color-blue-400);
     margin-bottom: rem(24);
   }
+
+  &__image {
+    overflow: hidden;
+    border-radius: var(--radius-main);
+  }
 }
