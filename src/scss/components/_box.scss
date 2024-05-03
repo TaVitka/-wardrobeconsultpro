@@ -1,0 +1,39 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.box {
+  &__inner {
+    @include flex-all-sb;
+  }
+
+  &__content {
+    max-width: 660px;
+    width: 100%;
+    padding-inline: clamp(20px, 3.5vw, 48px);
+
+    //& > *:not(:last-child) {
+    //  margin-bottom: clamp(20px, 3vw, 32px);
+    //}
+  }
+
+  &__title,
+  &__texts {
+    margin-bottom: clamp(20px, 3vw, 32px);
+  }
+
+  &__text {
+    &:not(:last-of-type) {
+      margin-bottom: clamp(20px, 4vw, 50px);
+    }
+
+    p {
+      line-height: 1.4;
+    }
+  }
+
+  &--home {
+    .box__content {
+      padding-bottom: 10px;
+    }
+  }
+}
