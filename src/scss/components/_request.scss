@@ -1,0 +1,102 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.request {
+  $root: &;
+  padding-bottom: 0;
+
+  &__inner {
+    @include flex-sb;
+    margin-inline: auto;
+    margin-bottom: clamp(30px, 4.5vw, 64px);
+  }
+
+  &__content {
+    max-width: 493px;
+    padding-left: clamp(0px, 4vw, 50px);
+
+    p {
+      margin-bottom: clamp(30px, 9vw, 122px);
+    }
+  }
+
+  h2 {
+    margin-bottom: clamp(30px, 4.5vw, 64px);
+  }
+
+  &__mail {
+    position: relative;
+    padding-left: 83px;
+
+    &::before {
+      @include cover-background;
+
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 67px;
+      height: 67px;
+      transform: translateY(-50%);
+      background-image: url("../images/icons/mail-icon.svg");
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__form {
+    max-width: 599px;
+    width: 100%;
+    padding: clamp(20px, 3vw, 40px);
+    background-color: var(--color-yellow-300);
+    border: 1px solid var(--color-grey-300);
+
+    & > *:not(:last-child, .request__textarea) {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+    }
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      padding-bottom: 17px;
+      border: none;
+      border-bottom: 2px solid var(--color-black);
+    }
+
+    textarea {
+      min-height: 191px;
+      background-color: transparent;
+      appearance: none;
+    }
+
+    .btn {
+      margin-inline: auto;
+      font-size: 18px;
+    }
+  }
+
+  &__textarea {
+    margin-bottom: clamp(24px, 3vw, 40px);
+  }
+
+  &__flex {
+    @include flex-all-sb;
+    gap: 20px;
+
+    label {
+      flex-basis: 48%;
+    }
+  }
+
+  &__image {
+    @include cover-background;
+    min-height: 260px;
+  }
+}
