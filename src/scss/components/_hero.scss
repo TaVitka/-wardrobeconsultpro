@@ -1,0 +1,19 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.hero {
+  $root: &;
+
+  &__content {
+    @include flex-v-center;
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 40px);
+    margin-bottom: clamp(30px, 4.5vw, 60px);
+  }
+
+  &__desc {
+    width: 85%;
+    color: var(--color-blue-400);
+    margin-bottom: rem(24);
+  }
+}
