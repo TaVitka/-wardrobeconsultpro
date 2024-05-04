@@ -1,0 +1,46 @@
+@use "../utils/functions/"as*;
+@use "../utils/mixins/"as*;
+
+.blog {
+  &__nav {
+    padding-block: clamp(24px, 4.5vw, 64px) 24px;
+
+    & >*:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__body {
+    padding-block: clamp(24px, 4.5vw, 64px);
+
+    & > *:not(:last-child) {
+      margin-bottom: clamp(20px, 3.5vw, 32px);
+    }
+
+    li,
+    p,
+    span {
+      font-weight: var(--fw-400);
+      line-height: 1.5;
+    }
+
+    ul {
+      padding-inline: clamp(16px, 2vw, 30px) 0;
+    }
+
+    li {
+      display: list-item;
+      list-style: disc;
+
+      &:not(:last-of-type) {
+        margin-bottom: clamp(20px, 3.5vw, 32px);
+      }
+    }
+
+    a {
+      color: var(--color-red-400);
+      text-decoration: underline;
+      text-underline-offset: 6px;
+    }
+  }
+}

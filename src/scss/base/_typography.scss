@@ -50,11 +50,16 @@ h3 {
   position: relative;
   display: block;
   width: fit-content;
-  padding-right: 42px;
+  padding-inline: 0 42px;
   font-size: clamp(16px, 2vw, 20px);
   line-height: 1.2;
   font-weight: var(--fw-600);
   color: var(--color-red-400);
+  transition: scale .4s ease-in-out;
+
+  &:hover {
+    scale: 1.2;
+  }
 
   &::before {
     @include cover-background;
@@ -67,6 +72,16 @@ h3 {
     width: 28px;
     height: 28px;
     background-image: url("../images/icons/more-icon.svg");
+  }
+
+  &--reverse {
+    padding-inline: 42px 0;
+
+    &::before {
+      left: 0;
+      right: unset;
+      transform: translateY(-50%) rotate(180deg);
+    }
   }
 }
 
