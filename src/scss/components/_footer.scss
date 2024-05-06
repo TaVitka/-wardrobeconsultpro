@@ -3,7 +3,7 @@
 
 .footer {
   &__inner {
-    padding: 32px 0;
+    padding: clamp(16px, 2.5vw, 32px) 0;
     background-color: var(--color-grey-400);
   }
 
@@ -19,12 +19,13 @@
 
   &__link {
     padding-block: 10px;
-    font-size: 18px;
+    font-size: clamp(16px, 2vw, 18px);
     line-height: 1.5;
     color: var(--color-white);
+    white-space: nowrap;
 
     &:not(:last-of-type) {
-      margin-right: 30px;
+      margin-right: clamp(16px, 2.5vw, 30px);
 
     }
   }
@@ -45,6 +46,46 @@
   &__item {
     &:not(:last-of-type) {
       margin-right: clamp(30px, 19vw, 265px);
+    }
+  }
+
+  br {
+    display: none;
+  }
+
+  @include media(tablet-wide) {
+    &__inner {
+      .footer__wrapper {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+    &__item {
+      &:not(:last-of-type) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    .footer__wrapper {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+  }
+
+  @include media(mobile-m) {
+    &__links {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  @include media(mobile-s) {
+    br {
+      display: block;
     }
   }
 }

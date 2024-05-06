@@ -22,13 +22,27 @@
     border-radius: var(--radius-main);
   }
 
-  h1 {
+  h1,
+  &__accent {
     text-align: center;
   }
 
   &--services {
     h1 {
       width: 65%;
+    }
+  }
+
+  @include media(tablet-wide) {
+    &__img {
+      height: auto;
+      aspect-ratio: 4/2;
+    }
+  }
+
+  @include media(mobile-m) {
+    &__img {
+      aspect-ratio: 3/2;
     }
   }
 }

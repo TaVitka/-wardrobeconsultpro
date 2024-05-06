@@ -78,7 +78,6 @@
 
     .btn {
       margin-inline: auto;
-      font-size: 18px;
     }
   }
 
@@ -92,11 +91,66 @@
 
     label {
       flex-basis: 48%;
+      width: 100%;
     }
   }
 
   &__image {
     @include cover-background;
     min-height: 260px;
+  }
+
+  @include media(tablet) {
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__content,
+    &__form {
+      max-width: 100%;
+    }
+
+    &__content {
+      margin-bottom: 30px;
+      padding-inline: 0;
+
+      p {
+        max-width: 770px;
+        margin-bottom: clamp(20px, 4vw, 40px);
+      }
+    }
+
+    &__mail {
+      padding-left: 60px;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  @include media(mobile-l) {
+    &__mail {
+      padding-left: 0;
+      padding-top: 50px;
+
+      &::before {
+        top: 0;
+        transform: translateY(0);
+      }
+    }
+
+    &__flex {
+      flex-direction: column;
+    }
+
+    &__image {
+      min-height: 140px;
+    }
   }
 }

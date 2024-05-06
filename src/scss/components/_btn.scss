@@ -9,7 +9,7 @@
   border: 1px solid var(--color-dark);
   font-family: var(--font-family-primary);
   font-weight: var(--fw-400);
-  font-size: clamp(18px, 3vw, 20px);
+  font-size: clamp(16px, 3vw, 20px);
   line-height: 1.22;
   color: var(--color-dark) !important;
   text-align: center;
@@ -92,7 +92,6 @@
       left: unset;
       right: unset;
       margin: 0;
-      min-width: 50px;
     }
 
     .swiper-pagination {
@@ -106,6 +105,13 @@
     }
   }
 
+  @include media(desktop) {
+    .swiper__nav {
+      position: static;
+      margin-inline: auto;
+    }
+  }
+
   @include media(tablet-wide) {
     .swiper-button {
       bottom: 50%;
@@ -114,11 +120,18 @@
 
     .swiper-button-prev {
       left: 16px;
+      transform: rotate(180deg);
     }
 
     .swiper-button-next {
       right: 16px;
-      transform: translateY(-50%) rotate(180deg);
+      transform: translateY(-50%);
+    }
+
+    .swiper__nav {
+      .swiper-button-next {
+        transform: translateY(0);
+      }
     }
   }
 
@@ -126,12 +139,12 @@
     .swiper-button {
       width: 28px;
       height: 28px;
-      bottom: unset;
-      top: 30%;
+    }
+  }
 
-      &--bottomed {
-        top: 50%;
-      }
+  @include media(mobile-sm) {
+    .swiper-button {
+      bottom: 60%;
     }
   }
 }

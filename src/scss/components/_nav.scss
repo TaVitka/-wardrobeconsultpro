@@ -17,10 +17,6 @@
     margin-right: 32px;
 
     @include media(tablet) {
-      max-width: 180px;
-    }
-
-    @include media(mobile-s) {
       max-width: 130px;
     }
   }

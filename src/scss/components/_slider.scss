@@ -37,9 +37,10 @@
   }
 
   &__content {
-    max-width: 741px;
+    max-width: 773px;
     width: 100%;
     margin-inline: auto;
+    padding-inline: 16px;
     text-align: center;
 
     h3 {
@@ -74,6 +75,7 @@
       max-width: 555px;
       width: 100%;
       margin-inline: 0;
+      padding-inline: 0;
       padding-bottom: 114px;
       text-align: left;
 
@@ -88,6 +90,10 @@
   }
 
   &--blog {
+    .slider__item {
+      background-color: transparent;
+    }
+
     .slider__intro {
       h2 {
         margin-bottom: clamp(20px, 3vw, 32px);
@@ -96,7 +102,6 @@
 
     .slider__inner {
       position: relative;
-      min-height: 728px;
       padding: 0;
 
       img {
@@ -126,46 +131,6 @@
       text-transform: uppercase;
     }
   }
-
-  //&__blog,
-  //&__event {
-  //  img {
-  //    margin-bottom: 0;
-  //  }
-  //
-  //  .slider__inner {
-  //    padding-bottom: 0;
-  //  }
-  //
-  //  .slider__content {
-  //    position: absolute;
-  //    bottom: 0;
-  //    left: 50%;
-  //    max-width: 1021px;
-  //    width: max-content;
-  //    transform: translateX(-50%);
-  //    z-index: 2;
-  //  }
-  //}
-
-  //&__blog {
-  //  .slider__content {
-  //    border-bottom-right-radius: 0;
-  //    border-bottom-left-radius: 0;
-  //  }
-  //}
-
-  //&__event {
-  //  .slider__content {
-  //    max-width: 870px;
-  //    width: 100%;
-  //    bottom: 32px;
-  //  }
-  //
-  //  .swiper-button.swiper-button--bottomed {
-  //    bottom: 124px;
-  //  }
-  //}
 
   &--outfit {
     .slider__intro {
@@ -231,117 +196,90 @@
     }
   }
 
+  @include media(desktop) {
+    &--reviews {
+      .slider__items {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
   @include media(tablet-wide) {
     img {
       height: auto;
     }
 
-    &--blog {
-      .slider__inner,
-      img {
-        height: 100%;
-      }
-    }
-
-    &--event {
+    &--reviews {
       .slider__content {
-        max-width: 80%;
+        padding-bottom: 0;
       }
     }
   }
 
   @include media(tablet) {
     &__intro {
-      margin-bottom: clamp(16px, 4vw, 32px);
+      padding-inline: 0;
     }
 
-    &__content {
-      width: 95%;
-    }
-  }
+    &--reviews {
+      .slider__item {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
 
-  @include media(mobile-l) {
-    padding-bottom: 0;
-
-    &__blog,
-    &__event {
       .slider__content {
         max-width: 100%;
-        width: 85%;
-        padding: 16px;
-      }
-
-      h3 {
-        margin-bottom: 10px;
-      }
-    }
-
-    &__outfit {
-      .slider__inner {
-        padding: 0;
-      }
-      .slider__content {
-        width: 100%;
-        padding: 0;
+        padding-inline: clamp(10px, 1.7vw, 16px);
+        padding-block: clamp(10px, 2.2vw, 20px) clamp(10px, 1.7vw, 16px);
       }
 
       img {
-        aspect-ratio: 4 / 3;
-        object-fit: contain;
+        width: 100%;
       }
+
     }
   }
 
   @include media(mobile-m) {
-    &__nav {
-      flex-direction: column;
-
-      p {
-        margin-right: 0;
-        margin-bottom: 10px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-
-    &__blog,
-    &__event {
-      .slider__item {
-        background: var(--color-white);
-      }
-
-      img {
-        height: auto;
-        aspect-ratio: 6 / 4;
-        object-position: top;
+    &--blog {
+      .slider__inner {
+        img {
+          filter: brightness(.7);
+        }
       }
 
       .slider__content {
-        width: 100%;
-        padding: 16px 16px 0;
         position: static;
-        transform: translate(0, 0);
+        padding-block: clamp(10px, 3vw, 20px);
+        padding-inline: clamp(16px, 5vw, 30px);
+        background-color: var(--color-yellow-300);
+        color: var(--color-dark);
       }
 
-      .btn {
-        width: 95%;
-        background: var(--gradient-pink);
+      .title {
+        font-size: clamp(24px, 4vw, 56px);
       }
-    }
 
-    &__inner {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      [class].swiper {
+        .swiper-button--centered {
+          top: 30%;
+        }
+
+        .swiper-button-next {
+          transform: translateY(0);
+        }
+      }
     }
   }
 
   @include media(mobile-s) {
-    &__outfit {
-      img {
-        aspect-ratio: auto;
+    &--blog {
+      .slider__inner {
+        img {
+          height: auto;
+          aspect-ratio: 1/1;
+          filter: brightness(.7);
+        }
       }
     }
   }

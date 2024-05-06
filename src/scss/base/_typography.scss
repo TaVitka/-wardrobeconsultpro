@@ -15,14 +15,13 @@ h2,
   font-weight: var(--fw-500);
 }
 
-h1,
-.title {
+h1 {
   font-size: clamp(32px, 4vw, 56px);
 }
 
 h2,
 .name {
-  font-size: clamp(26px, 4vw, 48px);
+  font-size: clamp(24px, 4vw, 48px);
   text-transform: capitalize;
 }
 
@@ -31,6 +30,10 @@ h3 {
   line-height: 1.25;
   font-weight: var(--fw-600);
   text-transform: capitalize;
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 56px);
 }
 
 .link {
@@ -86,6 +89,7 @@ h3 {
 }
 
 .text {
+  font-size: clamp(16px, 2vw, 24px);
   font-weight: var(--fw-400);
   line-height: 1.5;
 }
