@@ -4,6 +4,8 @@
 .box {
   &__inner {
     @include flex-all-sb;
+
+    gap: 20px;
   }
 
   &__content {
@@ -106,7 +108,25 @@
 
     &--home {
       .box__inner {
-        flex-direction: column-reverse;
+        flex-direction: column;
+      }
+    }
+
+    &--reverse {
+      .box__inner {
+        flex-direction: column;
+      }
+    }
+
+    &--background,
+    &--journey,
+    &--ethic {
+      padding-top: 0;
+    }
+
+    &--journey {
+      .box__content {
+        padding-inline: 0;
       }
     }
   }
@@ -121,9 +141,5 @@
 .page--about .box--home {
   .link {
     display: none;
-  }
-
-  .box__content {
-    padding-bottom: 50px;
   }
 }

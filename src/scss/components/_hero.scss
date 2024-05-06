@@ -38,6 +38,12 @@
       height: auto;
       aspect-ratio: 4/2;
     }
+
+    &--services {
+      h1 {
+        width: 100%;
+      }
+    }
   }
 
   @include media(mobile-m) {

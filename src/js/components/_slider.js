@@ -65,7 +65,7 @@ const swiperOutfit = new Swiper('.slider__outfit', {
       slidesPerView: 2,
       slidesPerGroup: 2,
     },
-    319: {
+    1: {
       slidesPerView: 1,
       slidesPerGroup: 1,
     },
