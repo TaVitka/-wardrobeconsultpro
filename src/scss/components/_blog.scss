@@ -44,9 +44,12 @@
     }
   }
 
+  &__img {
+    width: 100%;
+  }
+
   @include media(tablet) {
     &__img {
-      height: auto;
       aspect-ratio: 3 / 2;
     }
   }

@@ -35,7 +35,6 @@
 
   @include media(tablet-wide) {
     &__img {
-      height: auto;
       aspect-ratio: 4/2;
     }
 

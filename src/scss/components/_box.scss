@@ -77,12 +77,6 @@
     }
   }
 
-  @include media(tablet) {
-    &__image {
-      height: auto;
-    }
-  }
-
   @include media(mobile-l) {
     &__inner {
       flex-direction: column;
@@ -101,7 +95,6 @@
 
     &__img {
       width: 100%;
-      height: auto;
       aspect-ratio: 5 / 4;
       object-position: top;
     }

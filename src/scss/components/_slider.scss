@@ -206,10 +206,6 @@
   }
 
   @include media(tablet-wide) {
-    img {
-      height: auto;
-    }
-
     &--reviews {
       .slider__content {
         padding-bottom: 0;
@@ -318,7 +314,6 @@
     &--blog {
       .slider__inner {
         img {
-          height: auto;
           aspect-ratio: 1/1;
           filter: brightness(.7);
         }
